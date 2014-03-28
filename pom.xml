@@ -1,0 +1,179 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.umass.ciir</groupId>
+    <artifactId>strepsirrhine</artifactId>
+    <properties>
+        <scala.version>2.10.2</scala.version>
+        <javaVersion>1.6</javaVersion>
+        <lemur.version>3.6-SNAPSHOT</lemur.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <version>s${scala.version}-g${lemur.version}-1.0-SNAPSHOT</version>
+    <inceptionYear>2013</inceptionYear>
+
+
+    <repositories>
+        <repository>
+            <id>edu.umass.ciir.snapshots</id>
+            <name>CIIR Nexus Snapshots</name>
+            <url>http://scm-ciir.cs.umass.edu:8080/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>edu.umass.ciir.releases</id>
+            <name>CIIR Nexus Releases</name>
+            <url>http://scm-ciir.cs.umass.edu:8080/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.umass.ciir</groupId>
+            <artifactId>strepsitools</artifactId>
+            <version>s${scala.version}-1.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.umass.ciir</groupId>
+            <artifactId>strepsirank</artifactId>
+            <version>s${scala.version}-1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.umass.ciir</groupId>
+            <artifactId>strepsimur</artifactId>
+            <version>s${scala.version}-g${lemur.version}-1.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.umass.ciir</groupId>
+            <artifactId>strepsent</artifactId>
+            <version>s${scala.version}-1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.umass.ciir</groupId>
+            <artifactId>strepsipand</artifactId>
+            <version>s${scala.version}-1.0-SNAPSHOT</version>
+        </dependency>
+
+
+
+        <dependency>
+        <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${javaVersion}</source>
+                    <target>${javaVersion}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.1.3</version>
+                <configuration>
+                    <addScalacArgs>-deprecation|-unchecked</addScalacArgs>
+                    <recompileMode>incremental</recompileMode>
+                    <useZincServer>true</useZincServer>
+                    <source>${javaVersion}</source>
+                    <target>${javaVersion}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <goals>assembly:single</goals>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <!--  <goal>add-source</goal> -->
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <args>
+                        <arg>-target:jvm-1.5</arg>
+                    </args>
+                    <jvmArgs>
+                        <jvmArg>-Xms64m</jvmArg>
+                        <jvmArg>-Xmx2g</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>deployment</id>
+            <name>Internal Releases</name>
+            <url>http://scm-ciir.cs.umass.edu:8080/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>deployment</id>
+            <name>Internal Releases</name>
+            <url>http://scm-ciir.cs.umass.edu:8080/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
+
