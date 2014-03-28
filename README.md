@@ -8,11 +8,11 @@ The main contribution of this project is a set of independent modules that are e
 Components
 ----------
 
-- strepsi-tools: basic utilities for sequence and map processing, used by all other strepsirrhini components.
-- strepsimur: scala integration with Galago from Lemur project
-- strepsirank: discriminative learning-to-rank component (useful for feature-based re-ranking of galago output). Forked from RankLib project.
-- strepsipand: several query expansion models or base classes to implement your own relevance model variant.
-- strepsent: parsing of different entity linking annotations, including Google's FACC1 annptations and output of KB-Bridge.
+- [strepsi-tools](http://github.com/laura-dietz/strepsi-tools): basic utilities for sequence and map processing, used by all other strepsirrhini components.
+- [strepsimur](http://github.com/laura-dietz/strepsimur): scala integration with Galago from Lemur project
+- [strepsirank](https://github.com/laura-dietz/strepsirank): discriminative learning-to-rank component (useful for feature-based re-ranking of galago output). Forked from RankLib project.
+- [strepsipand](https://github.com/laura-dietz/strepsipand): several query expansion models or base classes to implement your own relevance model variant.
+- [strepsent](https://github.com/laura-dietz/strepsent): parsing of different entity linking annotations, including Google's FACC1 annptations and output of [KB-Bridge](http://ciir.cs.umass.edu/~jdalton/kbbridge/).
 
 
 Installation
