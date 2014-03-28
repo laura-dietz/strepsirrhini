@@ -6,11 +6,11 @@
     <properties>
         <scala.version>2.10.2</scala.version>
         <javaVersion>1.6</javaVersion>
-        <lemur.version>3.6-SNAPSHOT</lemur.version>
+        <lemur.version>3.5</lemur.version>
+        <strepsi.version>1.2</strepsi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <version>s${scala.version}-g${lemur.version}-1.0-SNAPSHOT</version>
+    <version>s${scala.version}-g${lemur.version}-${strepsi.version}</version>
     <inceptionYear>2013</inceptionYear>
 
 
@@ -44,31 +44,31 @@
         <dependency>
             <groupId>edu.umass.ciir</groupId>
             <artifactId>strepsitools</artifactId>
-            <version>s${scala.version}-1.0.1-SNAPSHOT</version>
+            <version>s${scala.version}-${strepsi.version}</version>
         </dependency>
 
         <dependency>
             <groupId>edu.umass.ciir</groupId>
             <artifactId>strepsirank</artifactId>
-            <version>s${scala.version}-1.0-SNAPSHOT</version>
+            <version>s${scala.version}-${strepsi.version}</version>
         </dependency>
 
         <dependency>
             <groupId>edu.umass.ciir</groupId>
             <artifactId>strepsimur</artifactId>
-            <version>s${scala.version}-g${lemur.version}-1.0.1-SNAPSHOT</version>
+            <version>s${scala.version}-g${lemur.version}-${strepsi.version}</version>
         </dependency>
 
         <dependency>
             <groupId>edu.umass.ciir</groupId>
             <artifactId>strepsent</artifactId>
-            <version>s${scala.version}-1.0-SNAPSHOT</version>
+            <version>s${scala.version}-${strepsi.version}</version>
         </dependency>
 
         <dependency>
             <groupId>edu.umass.ciir</groupId>
             <artifactId>strepsipand</artifactId>
-            <version>s${scala.version}-1.0-SNAPSHOT</version>
+            <version>s${scala.version}-${strepsi.version}</version>
         </dependency>
 
 
