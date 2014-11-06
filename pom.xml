@@ -6,8 +6,8 @@
     <properties>
         <scala.version>2.10.2</scala.version>
         <javaVersion>1.6</javaVersion>
-        <lemur.version>3.5</lemur.version>
-        <strepsi.version>1.4-SNAPSHOT</strepsi.version>
+        <lemur.version>3.7-SNAPSHOT</lemur.version>
+        <strepsi.version>1.4</strepsi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <version>s${scala.version}-g${lemur.version}-${strepsi.version}</version>
